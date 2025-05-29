@@ -1,4 +1,4 @@
-from typing import List, Dict, Union
+from typing import List, Dict
 from datetime import datetime
 
 
@@ -15,5 +15,5 @@ def sort_by_date(operations: List[Dict], reverse: bool = True) -> List[Dict]:
     """
     def parse_date(operation: Dict) -> datetime:
         return datetime.strptime(operation['date'], '%Y-%m-%dT%H:%M:%S.%f')
-    
-    return sorted(operations, key=parse_date, reverse=reverse) 
+
+    return sorted(operations, key=parse_date, reverse=reverse)
