@@ -6,7 +6,13 @@ from src.masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(account_card_info: str) -> str:
     """Маскирует номер карты или счета в зависимости от типа."""
+    if not account_card_info:
+        raise ValueError("Строка не может быть пустой")
+
     parts = account_card_info.split()
+    if len(parts) < 2:
+        raise ValueError("Неверный формат строки")
+
     number = parts[-1]  # Последняя часть строки - это номер
     name = " ".join(parts[:-1])  # Все остальное - название
 
