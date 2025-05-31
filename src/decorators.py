@@ -1,5 +1,5 @@
-import functools
 import logging
+import functools
 from typing import Any, Callable, Optional, TypeVar
 
 
