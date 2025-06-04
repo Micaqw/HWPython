@@ -7,6 +7,8 @@ def get_mask_card_number(card_number: Union[int, str]) -> str:
     card_str = str(card_number)
     if len(card_str) != 16:
         raise ValueError("Номер карты должен содержать 16 цифр")
+    if not card_str.isdigit():
+        raise ValueError("Номер карты должен содержать только цифры")
 
     masked = f"{card_str[:4]} " f"{card_str[4:6]}** " f"**** " f"{card_str[-4:]}"
     return masked
